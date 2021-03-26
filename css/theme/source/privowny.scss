@@ -1,0 +1,141 @@
+/**
+ * Black theme for reveal.js.
+ *
+ * Copyright (C) 2011-2012 Hakim El Hattab, http://hakim.se
+ */
+// Default mixins and settings -----------------
+@import "../template/mixins";
+@import "../template/settings"; // ---------------------------------------------
+// Include theme-specific fonts
+@import url(https://fonts.googleapis.com/css2?family=Inter:wght@700);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700,400italic,700italic); // Override theme settings (see ../template/settings.scss)
+$backgroundColor: #e5e5e5;
+$mainColor: #242e3b;
+$headingColor: #242e3b;
+$mainFont: 'Open Sans', sans-serif;
+$linkColor: #e07256;
+$linkColorHover: lighten($linkColor, 20%);
+$headingFont: 'Inter', Impact, sans-serif;
+$headingFontWeight: 600;
+$headingTextShadow: none;
+$headingLetterSpacing: -0.03em;
+$headingTextTransform: none;
+$selectionBackgroundColor: #e7ad52; // Change text colors against light slide backgrounds
+@include dark-bg-text-color(#242e3b); // Theme template ------------------------------
+@import "../template/theme"; // ---------------------------------------------
+// some overrides after theme template import
+
+.reveal .coverPage div {
+	background-image: url("../../assets/Wallpaper-low-medium.png");
+	background-repeat: repeat;
+	background-size: auto;
+}
+
+.reveal .coverPage {
+	display: grid !important;
+	grid-template-columns: 1fr 2fr;
+}
+
+.coverPage h2,
+.coverPage h3,
+.coverPage h4,
+.coverPage h5,
+.coverPage h6,
+.reveal .coverPage h1 {
+	color: #fff;
+	grid-column: 2/3;
+	text-align: left;
+	margin: 0;
+}
+
+.reveal .coverPage h2 {
+	align-self: center;
+}
+
+.reveal .twoLines h2 {
+	align-self: end;
+	line-height: 1;
+}
+
+.reveal .coverPage p {
+	grid-row: span 2;
+	margin: 0;
+	text-align: end;
+}
+
+.reveal .coverPage .logo {
+	height: 14rem;
+	margin: 0;
+}
+
+.reveal .coverPage .title h2 {
+	margin: 0;
+}
+
+.reveal .numberedPage h2 {
+	color: #fff;
+	align-items: center;
+}
+
+.reveal .numbered {
+	color: #e07256;
+	font-size: 8rem;
+	font-family: "Inter";
+	font-weight: 500;
+	padding-right: 1rem;
+	grid-row: auto !important;
+}
+
+.reveal .side-compare {
+	display: grid !important;
+	gap: 2rem;
+	padding: 2rem;
+	grid-template-columns: 1fr 1fr;
+	box-sizing: border-box;
+	margin: auto;
+	// height: 70vh;
+	max-height: 700px;
+	align-items: center;
+}
+
+.reveal .side-compare p {
+	height: inherit;
+	text-align: center;
+	overflow: hidden;
+}
+
+.reveal .side-compare img {
+	// max-height: 400px;
+	// max-width: 400px;
+	margin: auto;
+	border-radius: 4px;
+	max-height: 512px;
+}
+
+.reveal img {
+	margin: auto;
+	border-radius: 4px;
+	max-height: 512px;
+}
+// .reveal .slides ::after{
+// 	content: "© 2021 Privowny - All right reserved";
+// font-size: 1rem;
+// position: fixed;
+// bottom: 0;
+// width: 100%;
+// // background-color: #fff;
+// padding: 2rem;
+// text-align: center;
+// left: 0;
+// box-sizing: border-box;
+// }
+// .reveal div ::before{
+// 	content: "OI";
+// 	font-size: 1rem;
+// 	position: absolute;
+// 	top: 0;
+// 	right: 0;
+// 	background-color: #fff;
+// 	padding: 2rem;
+// 	text-align: center;
+// }
